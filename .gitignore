@@ -110,8 +110,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-# poetry
-poetry.lock
-pypoetry.toml
-pyproject.toml

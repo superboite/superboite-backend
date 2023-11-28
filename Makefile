@@ -8,12 +8,11 @@ run-docker:
 					-v /home/mdelobelle/.gcp/service-accout.json:/service-accout.json \
 					-p 8080:8080 superboite-api:latest
 
-
-	# export PROJECT_ID=superboite
-	# export IMAGE_NAME=superboite-api
-	# export TAG=0.0.1
-	# export REGION=europe-west1
-	# export REPOSITORY_NAME=superboite-api-repo
+# export PROJECT_ID=superboite
+# export IMAGE_NAME=superboite-api
+# export TAG=0.0.1
+# export REGION=europe-west1
+# export REPOSITORY_NAME=superboite-api-repo
 
 
 docker-build : 

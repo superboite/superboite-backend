@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "superboite-api"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.104.1"
+uvicorn = "^0.24.0.post1"
+google-api-python-client = "^2.108.0"
+google-auth-httplib2 = "^0.1.1"
+google-auth-oauthlib = "^1.1.0"
+google-auth = "^2.23.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
