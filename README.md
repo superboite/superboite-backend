@@ -100,3 +100,17 @@
 
 
 ## Install direnv
+
+```
+   sudo apt-get -y install direnv
+
+```
+
+```
+    nano ~/.bashrc
+```
+* add the follwing at the end of the doc :  eval "$(direnv hook bash)"
+
+```
+    source ~/.bashrc
+```

@@ -1,5 +1,8 @@
 .PHONY: run
 
+clean-docker : 
+	docker system prune -a --volumes
+
 run:
 	poetry run uvicorn superboite_api.main:app --reload
 
