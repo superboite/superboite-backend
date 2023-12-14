@@ -12,32 +12,47 @@
 
 
 ## Install git
-```sudo apt update```
-```sudo apt upgrade```
-```sudo apt install git```
-```ssh-keygen -t rsa -b 4096 -C "maximedelobelle@gmail.com"```
-```eval "$(ssh-agent -s)"```
-```cat  cat ~/.ssh/id_rsa.pub```
-```git config --global user.name 'maxdelob'```
-```git config --global user.name 'maximedelobelle@gmail.com'```
-```git clone git@github.com:superboite/superboite-backend.git```
+```
+    sudo apt update
+    sudo apt upgrade
+    sudo apt install git
+    ssh-keygen -t rsa -b 4096 -C "maximedelobelle@gmail.com"
+    eval "$(ssh-agent -s)"
+    cat  cat ~/.ssh/id_rsa.pub
+    git config --global user.name 'maxdelob'
+    git config --global user.name 'maximedelobelle@gmail.com'
+    git clone git@github.com:superboite/superboite-backend.git
+```
 
 
 ## Make python 3 to Phyton 
-```nano ~/.bashrc```
-```alias python=python3```
-```source ~/.bashrc```
+```
+    nano ~/.bashrc
+```
+* add the follwing at the end of the doc :  alias python=python3
+
+```
+    source ~/.bashrc
+```
 
 ## Init glcould
-  ```gcloud auth login```
+  ```
+    gcloud auth login
+ ```
 
 ## Poetrty install 
-  ```sudo apt-get install python3-distutils```
-  ```sudo curl -sSL https://install.python-poetry.org | python3 - ```
-  ```export PATH="$HOME/.local/bin:$PATH"```
+  ```
+    sudo apt-get install python3-distutils
+    sudo curl -sSL https://install.python-poetry.org | python3 - 
+    export PATH="$HOME/.local/bin:$PATH"
+  
+  ```
 
 ## Install Make
-   ```sudo apt-get install make```
+```
+    sudo apt-get install make
+    
+```
 
 
 ## Install Docker 
@@ -67,15 +82,21 @@
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 ```
-```sudo apt-get update```
+```
+    sudo apt-get update
+```
 
-```sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin```
+```
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
 
 
 ### Remove the sudo before every docker command 
 
-```sudo usermod -aG docker mdelobelle```
-```newgrp docker```
+```
+    sudo usermod -aG docker mdelobelle
+    newgrp docker
+```
 
 
 ## Install direnv
