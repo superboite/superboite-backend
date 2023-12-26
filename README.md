@@ -114,3 +114,21 @@
 ```
     source ~/.bashrc
 ```
+
+
+## Install NPM 
+
+```
+   curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+   sudo apt-get install -y nodejs
+```
+
+
+## Add gcp keys
+* Download the service account into the folder 
+```
+nano ~/.bashrc
+```
+* add the following
+export GOOGLE_APPLICATION_CREDENTIALS="/home/mdelobelle/.gcp/service-account.json"
+

@@ -1,23 +1,24 @@
 .PHONY: run
 
-clean-docker : 
+clean : 
 	docker system prune -a --volumes
 
-run:
+local:
 	poetry run uvicorn superboite_api.main:app --reload
 
-run-docker:
-	docker run -p 8080:8080 superboite-api:latest
+# run-docker:
+# 	docker run -p 8080:8080 superboite-api:latest
 
-docker-build : 
+build : 
 	docker build -t ${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPOSITORY_NAME}/${IMAGE_NAME}:${TAG} .
 
-push-to-repo: 
+repo: 
 	docker push ${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPOSITORY_NAME}/${IMAGE_NAME}:${TAG}
 
-push-to-cloud-run:
-	gcloud run deploy superboite-api-service \
+run:
+	gcloud run deploy ${IMAGE_NAME} \
 		--image ${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPOSITORY_NAME}/${IMAGE_NAME}:${TAG} \
+		--service-account google-drive-api@superboite.iam.gserviceaccount.com \
 		--platform managed \
 		--region ${REGION} \
 		--allow-unauthenticated \
@@ -25,7 +26,7 @@ push-to-cloud-run:
 		--cpu "1" \
 		--max-instances=1
 
-deploy-new-version : 
-	make docker-build
-	make push-to-repo
-	make push-to-cloud-run
+deploy : 
+	make build
+	make repo
+	make run
